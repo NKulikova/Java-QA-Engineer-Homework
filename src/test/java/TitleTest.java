@@ -7,16 +7,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class TitleTest {
     protected static WebDriver driver;
-    private Logger logger = LogManager.getLogger(TitleTest.class);
+    private static Logger logger = LogManager.getLogger(TitleTest.class);
 
     public TitleTest() {
     }
 
     @BeforeAll
-    public void setUp() {
+    public static void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        this.logger.info("Драйвер запущен.");
+        logger.info("Драйвер запущен.");
     }
 
     @Test
@@ -28,11 +28,11 @@ public class TitleTest {
     }
 
     @AfterAll
-    public void setDown() {
+    public static void setDown() {
         if (driver != null) {
             driver.quit();
         }
 
-        this.logger.info("Драйвер остановлен.");
+        logger.info("Драйвер остановлен.");
     }
 }
