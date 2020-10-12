@@ -1,10 +1,7 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -15,7 +12,7 @@ public class TitleTest {
     public TitleTest() {
     }
 
-    @BeforeEach
+    @BeforeAll
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
@@ -30,7 +27,7 @@ public class TitleTest {
         this.logger.info("Заголовок страницы корректный");
     }
 
-    @AfterEach
+    @AfterAll
     public void setDown() {
         if (driver != null) {
             driver.quit();
