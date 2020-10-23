@@ -1,11 +1,13 @@
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import Helpers.WebDriverFactory;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class TitleTest {
+
+    static String browserName = System.getProperty("browser").toUpperCase();
     protected static WebDriver driver;
     private static Logger logger = LogManager.getLogger(TitleTest.class);
 
@@ -14,8 +16,8 @@ public class TitleTest {
 
     @BeforeAll
     public static void setUp() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        FirefoxOptions options = new FirefoxOptions();
+        driver = new WebDriverFactory().createWebDriver(WebDriverFactory.Browser.valueOf(browserName.toUpperCase()), options);
         logger.info("Драйвер запущен.");
     }
 
