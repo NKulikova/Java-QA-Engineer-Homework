@@ -14,22 +14,13 @@ import org.openqa.selenium.ie.InternetExplorerOptions;
 
 public class WebDriverFactory {
 
-    public enum Browser {
-        CHROME,
-        FIREFOX,
-        OPERA,
-        EDGE,
-        IE,
-        SELENIUM_SERVER_STANDALONE,
-        SAFARI;
-    };
-
-    public WebDriver createWebDriver(Browser webDriverName) {
+    public WebDriver createWebDriver(String webDriverName) {
         return createWebDriver(webDriverName, null);
     }
 
-    public WebDriver createWebDriver(Browser webDriverName, MutableCapabilities options) {
-        switch (webDriverName) {
+    public WebDriver createWebDriver(String webDriverName, MutableCapabilities options) {
+        Browser browser = Browser.valueOf(webDriverName.toUpperCase());
+        switch (browser) {
             case CHROME: {
                 WebDriverManager.chromedriver().setup();
                 if (options instanceof ChromeOptions) { return new ChromeDriver((ChromeOptions)options); }
@@ -54,4 +45,14 @@ public class WebDriverFactory {
         }
     }
 
+}
+
+enum Browser {
+    CHROME,
+    FIREFOX,
+    OPERA,
+    EDGE,
+    IE,
+    SELENIUM_SERVER_STANDALONE,
+    SAFARI;
 }

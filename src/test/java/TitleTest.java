@@ -1,13 +1,16 @@
+import Config.ServerConfig;
+import org.aeonbits.owner.ConfigFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import Helpers.WebDriverFactory;
-import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class TitleTest {
 
-    static String browserName = System.getProperty("browser").toUpperCase();
+    private static ServerConfig cfg = ConfigFactory.create(ServerConfig.class);
+
+    static String browserName = cfg.browser();
     protected static WebDriver driver;
     private static Logger logger = LogManager.getLogger(TitleTest.class);
 
@@ -16,15 +19,14 @@ public class TitleTest {
 
     @BeforeAll
     public static void setUp() {
-        FirefoxOptions options = new FirefoxOptions();
-        driver = new WebDriverFactory().createWebDriver(WebDriverFactory.Browser.valueOf(browserName.toUpperCase()), options);
+        driver = new WebDriverFactory().createWebDriver(browserName);
         logger.info("Драйвер запущен.");
     }
 
     @Test
     public void checkTitle() {
         String expectedTitle = "Онлайн‑курсы для профессионалов, дистанционное обучение современным профессиям";
-        driver.get("https://otus.ru/");
+        driver.get(cfg.url());
         Assertions.assertEquals(expectedTitle, driver.getTitle());
         this.logger.info("Заголовок страницы корректный");
     }
@@ -34,7 +36,6 @@ public class TitleTest {
         if (driver != null) {
             driver.quit();
         }
-
         logger.info("Драйвер остановлен.");
     }
 }
