@@ -4,6 +4,7 @@ import org.aeonbits.owner.ConfigFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -13,20 +14,29 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 
-public class HomeWork03 {
+public class HomeWork03Test {
 
     private static ServerConfig cfg = ConfigFactory.create(ServerConfig.class);
 
     static String browserName = cfg.browser();
     protected static WebDriver driver;
     protected static WebDriverWait wait;
-    private static Logger logger = LogManager.getLogger(HomeWork03.class);
-    String yandexMarketUrl ="https://market.yandex.ru/";
+    private static Logger logger = LogManager.getLogger(HomeWork03Test.class);
+    private String yandexMarketUrl = cfg.url();
+
+    //локаторы
+    private String filter = "fieldset[data-autotest-id=\"7893318\"]";
+    private String checkboxSamsung = "li:nth-child(9) > div > a > label > div";
+    private String checkboxXiaomi = "li:nth-child(11) > div > a > label > div";
+    private String priceSort = "button[data-autotest-id=\"dprice\"]";
+    private String searchResults = "div[data-zone-name=\"SearchResults\"]";
+    private String articles = "article";
 
     @BeforeAll
     public static void setUp() {
@@ -53,20 +63,21 @@ public class HomeWork03 {
         logger.info("Переход в раздел \"Смартфоны\"");
 
         // нахожу панель с фильтрами, чтобы на ней выбрать производителей
-        WebElement filterCompany = waitElement(By.cssSelector("fieldset[data-autotest-id=\"7893318\"]"));
+        WebElement filterCompany = waitElement(By.cssSelector(filter));
         logger.info("Фильт по производителям отображается");
-        filterCompany.findElement(By.cssSelector("li:nth-child(9) > div > a > label > div")).click();  // не смогла подобрать адекватный селектор, прошу помочь разобраться, как его получить
+        filterCompany.findElement(By.cssSelector(checkboxSamsung)).click();  // не смогла подобрать адекватный селектор, прошу помочь разобраться, как его получить
         logger.info("Установлен фильтр \"Samsung\"");
-        filterCompany.findElement(By.cssSelector("li:nth-child(11) > div > a > label > div")).click();
+        filterCompany.findElement(By.cssSelector(checkboxXiaomi)).click();
         logger.info("Установлен фильтр \"Xiaomi\"");
 
         // сортировка по цене
-        driver.findElement(By.cssSelector("button[data-autotest-id=\"dprice\"]")).click();
+        driver.findElement(By.cssSelector(priceSort)).click();
         logger.info("Отсортировали по цене по убыванию");
 
         // нахожу панель результатов поиска, чтобы в ней выбрать модель для сравнени
 //        Thread.sleep(3000);
-        List<WebElement> searchResultsList = waitElements(By.cssSelector("article"));
+        WebElement searchResult = waitElement(By.cssSelector(searchResults));
+        List<WebElement> searchResultsList = searchResult.findElements(By.cssSelector(articles));
         List<WebElement> searchResultsSamsung = getProductList(searchResultsList, "Samsung");
         List<WebElement> searchResultsXiaomi = getProductList(searchResultsList, "Xiaomi");
 
@@ -74,26 +85,37 @@ public class HomeWork03 {
             WebElement samsungItem = searchResultsSamsung.get(0);
             WebElement xiaomiItem = searchResultsXiaomi.get(0);
             logger.info("Выбраны самые дешёвые Samsung и Xiaomi");
-            samsungItem.findElement(By.cssSelector("div > div")).click();
+
+            // На следующем шаге тест падает с ошибкой:
+            // org.openqa.selenium.StaleElementReferenceException: The element reference of <article class="_1_IxNTwqll cia-vs cia-cs"> is stale;
+            // either the element is no longer attached to the DOM, it is not in the current frame context, or the document has been refreshed
+            // Но страница не обновлялась, элементы не менялись.
+            samsungItem.findElement(By.cssSelector("div[aria-label=\"Добавить к сравнению\"]"));
             logger.info("Дбавляем к сравнению Samsung");
-            xiaomiItem.findElement(By.cssSelector("div > div")).click();
+            xiaomiItem.findElement(By.cssSelector("div[aria-label=\"Добавить к сравнению\"]"));
             logger.info("Дбавляем к сравнению Xiaomi");
-            WebElement popupInformer = waitElement(By.cssSelector("div[data-apiary-widget-name=\"@market/PopupInformer\"]"));
-            popupInformer.findElement(By.linkText("Сравнить")).click();
+            WebElement compare = wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.linkText("Сравнить"))));
+            compare.click();
             logger.info("Открываем сравнение");
+            // проверить, что в сравнеии два элемента
+            List<WebElement> compareItems = driver.findElements(By.cssSelector("img ~ a"));
+            Assertions.assertEquals(compareItems.size(), 2);
         }
+        else logger.info("Нет результатов для сравнения");
     }
 
     private WebElement waitElement(By by) {
-        return wait.until(driver -> driver.findElement(by));
+        return wait.until(ExpectedConditions.visibilityOf(driver.findElement(by)));
     }
+
     private List<WebElement> waitElements(By by) {
-        return wait.until(driver -> driver.findElements(by));
+        return wait.until(ExpectedConditions.visibilityOfAllElements(driver.findElements(by)));
     }
+
     private List<WebElement> getProductList(List<WebElement> commonList, String name) {
         List<WebElement> resultList = new ArrayList<WebElement>();
         if (commonList.size() != 0) {
-            for (int i = 0; i < commonList.size(); i++) {
+            for (int i = 0; resultList.size() < 1; i++) {
                 if (commonList.get(i).findElement(By.cssSelector("h3 > a > span")).getText().contains(name)) {
                     resultList.add(commonList.get(i));
                     continue;
