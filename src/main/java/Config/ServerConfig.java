@@ -6,13 +6,13 @@ import org.aeonbits.owner.Config.*;
 @Sources("classpath:config.properties")
 public interface ServerConfig extends Config {
 
-    @Key("browser")
-    String browser();
     @Key("url")
     String url();
     @Key("login")
     String login();
     @Key("password")
     String password();
+    @Key("browser")
+    String browser();
 
 }

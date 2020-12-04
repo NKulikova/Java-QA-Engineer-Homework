@@ -18,7 +18,7 @@ import pages.MainPageNotAuth;
 public class HomeWork04Test {
 
     private static ServerConfig cfg = ConfigFactory.create(ServerConfig.class);
-    static String BROWSER = cfg.browser();
+    static String browser = cfg.browser();
     protected static WebDriver driver;
     protected static WebDriverWait wait;
     private static Logger logger = LogManager.getLogger(HomeWork04Test.class);
@@ -26,14 +26,16 @@ public class HomeWork04Test {
     String login = cfg.login();
     String password = cfg.password();
 
-    @BeforeEach
+    @BeforeAll
     public static void setUp() {
-        driver = new WebDriverFactory().createWebDriver(BROWSER);
+        ServerConfig cfg = ConfigFactory.create(ServerConfig.class);
+        String browser = cfg.browser();
+        driver = new WebDriverFactory().createWebDriver(browser);
         wait = new WebDriverWait(driver, 10, 125);
         logger.info("Драйвер запущен");
     }
 
-    @AfterEach
+    @AfterAll
     public static void setDown() {
         if (driver != null) {
             driver.quit();
