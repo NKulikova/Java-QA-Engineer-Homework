@@ -10,5 +10,9 @@ public interface ServerConfig extends Config {
     String browser();
     @Key("url")
     String url();
+    @Key("login")
+    String login();
+    @Key("password")
+    String password();
 
 }
