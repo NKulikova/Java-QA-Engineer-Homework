@@ -9,7 +9,7 @@ public class MainPageNotAuth extends AbstractPage {
 
     private static ServerConfig cfg = ConfigFactory.create(ServerConfig.class);
     private String url = cfg.url();
-    private By btnLogReg = By.cssSelector("#new-log-reg");
+    private By btnLogReg = By.cssSelector("button[data-modal-id=\"new-log-reg\"]");
 
     public MainPageNotAuth(WebDriver driver) { super(driver); }
 

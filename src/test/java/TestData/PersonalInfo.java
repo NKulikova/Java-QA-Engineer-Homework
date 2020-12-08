@@ -3,72 +3,13 @@ package TestData;
 import org.openqa.selenium.By;
 
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
 public class PersonalInfo {
-    Map<String, String> profileInfo = new Map<String, String>() {
-        @Override
-        public int size() {
-            return 0;
-        }
-
-        @Override
-        public boolean isEmpty() {
-            return false;
-        }
-
-        @Override
-        public boolean containsKey(Object key) {
-            return false;
-        }
-
-        @Override
-        public boolean containsValue(Object value) {
-            return false;
-        }
-
-        @Override
-        public String get(Object key) {
-            return null;
-        }
-
-        @Override
-        public String put(String key, String value) {
-            return null;
-        }
-
-        @Override
-        public String remove(Object key) {
-            return null;
-        }
-
-        @Override
-        public void putAll(Map<? extends String, ? extends String> m) {
-
-        }
-
-        @Override
-        public void clear() {
-
-        }
-
-        @Override
-        public Set<String> keySet() {
-            return null;
-        }
-
-        @Override
-        public Collection<String> values() {
-            return null;
-        }
-
-        @Override
-        public Set<Entry<String, String>> entrySet() {
-            return null;
-        }
-    };
-    private Map<String, String> contactInfo;
+    private HashMap<String, String> profileInfo = new HashMap<>();
+//    private HashMap<String, String> contactInfo = new HashMap<>();
 
     public PersonalInfo(String name) {
         switch (name) {
@@ -77,8 +18,9 @@ public class PersonalInfo {
                 this.profileInfo.put("lastName", "Афанасьева");
                 this.profileInfo.put("firstNameLatin", "Anna");
                 this.profileInfo.put("lastnameLatin", "Afanaseva");
-                this.profileInfo.put("nickName", "Anuta193");
+                this.profileInfo.put("nickName", "Anuta93");
                 this.profileInfo.put("dayOfBirth", "10.12.1993");
+                break;
             }
             case "Kulikova":
             default: {
@@ -88,6 +30,7 @@ public class PersonalInfo {
                 this.profileInfo.put("lastnameLatin", "");
                 this.profileInfo.put("nickName", "Наталья");
                 this.profileInfo.put("dayOfBirth", "26.12.1986");
+                break;
             }
         }
     }

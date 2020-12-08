@@ -9,7 +9,7 @@ public class MainPageAuth extends AbstractPage {
 
     private static ServerConfig cfg = ConfigFactory.create(ServerConfig.class);
     private String url = cfg.url();
-    private By btnLogReg = By.cssSelector("#new-log-reg");
+    private By btnProfile = By.cssSelector("a[href=\"/lk/biography/personal/\"]");
 
     public MainPageAuth(WebDriver driver) { super(driver); }
 
@@ -19,7 +19,8 @@ public class MainPageAuth extends AbstractPage {
     }
 
     public BiographyPersonalPage openBiographyPersonalPage() {
-        driver.findElement(btnLogReg).click();
+//        driver.findElement(btnProfile).click();
+        driver.get(url + "lk/biography/personal/");
         return new BiographyPersonalPage(driver);
     }
 }
