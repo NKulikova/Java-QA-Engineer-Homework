@@ -23,10 +23,9 @@ public class BiographyPersonalPage extends AbstractPage {
     private By dob = By.cssSelector("input[name=\"date_of_birth\"]");
     private By saveAndContinue = By.cssSelector("button[title=\"Сохранить и продолжить\"]");
     private By saveAnfFillLater = By.cssSelector("button[title=\"Сохранить и заполнить позже\"]");
-    private By contactForm = By.cssSelector("div[data-prefix=\"contact\"]");
-    private By addContactButton = By.cssSelector("button");
-    private By deleteContactButton = By.linkText("Удалить");
-    private By selectContactType = By.linkText("Способ связи");
+    private By addContactButton = By.cssSelector("div[data-prefix=\"contact\"] > button");
+    private By contactItem = By.cssSelector("div[data-prefix=\"contact\"] > div > div:last-of-type");
+    private By selectContactType = By.cssSelector("div.select");
     private By enterContactNumber = By.cssSelector("input[type=\"text\"]");
 
     public BiographyPersonalPage(WebDriver driver) { super(driver); }
@@ -55,13 +54,12 @@ public class BiographyPersonalPage extends AbstractPage {
     }
 
     public BiographyPersonalPage addContactData(String type, String value) {
-        WebElement form = driver.findElement(contactForm);
-        WebElement contactButton = form.findElement(addContactButton);
+        WebElement contactButton = driver.findElement(addContactButton);
         contactButton.click();
-        WebElement contactType = form.findElement(selectContactType);
-        contactType.click();
-        form.findElement(By.linkText("type")).click();
-        form.findElement(enterContactNumber).sendKeys(value);
+        WebElement block = driver.findElement(contactItem);
+        block.findElement(selectContactType).click();
+        block.findElement(By.cssSelector("button[data-value=\"" + type.toLowerCase() + "\"]")).click();
+        block.findElement(enterContactNumber).sendKeys(value);
         return this;
     }
 

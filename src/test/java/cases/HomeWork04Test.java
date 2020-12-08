@@ -28,8 +28,8 @@ public class HomeWork04Test {
 
     // тут указываем какми данными будем заполнять поля на форме профиля
     // все данные заданы в файле TestData.PersonalInfo в виде хешкарты
-    private String profileName = "Afanaseva";
-//    private String profileName = "Kulikova";
+//    private String profileName = "Afanaseva";
+    private String profileName = "Kulikova";
 
 
     String login = cfg.login();
