@@ -1,15 +1,10 @@
 package TestData;
 
-import org.openqa.selenium.By;
-
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class PersonalInfo {
     private HashMap<String, String> profileInfo = new HashMap<>();
-//    private HashMap<String, String> contactInfo = new HashMap<>();
+    private HashMap<String, String> contactInfo = new HashMap<>();
 
     public PersonalInfo(String name) {
         switch (name) {
@@ -20,6 +15,8 @@ public class PersonalInfo {
                 this.profileInfo.put("lastnameLatin", "Afanaseva");
                 this.profileInfo.put("nickName", "Anuta93");
                 this.profileInfo.put("dayOfBirth", "10.12.1993");
+                this.contactInfo.put("Skype", "my_skype_number");
+                this.contactInfo.put("Viber", "my_viber_number");
                 break;
             }
             case "Kulikova":
@@ -35,18 +32,25 @@ public class PersonalInfo {
         }
     }
 
-    public PersonalInfo(String firstName, String lastName, String firstNameLatin, String lastnameLatin, String nickName, String dayOfBirth) {
-        this.profileInfo.put("firstName", firstName);
-        this.profileInfo.put("lastName", lastName);
-        this.profileInfo.put("firstNameLatin", firstNameLatin);
-        this.profileInfo.put("lastnameLatin", lastnameLatin);
-        this.profileInfo.put("nickName", nickName);
-        this.profileInfo.put("dayOfBirth", dayOfBirth);
+//    public PersonalInfo(String firstName, String lastName, String firstNameLatin, String lastnameLatin, String nickName, String dayOfBirth) {
+//        this.profileInfo.put("firstName", firstName);
+//        this.profileInfo.put("lastName", lastName);
+//        this.profileInfo.put("firstNameLatin", firstNameLatin);
+//        this.profileInfo.put("lastnameLatin", lastnameLatin);
+//        this.profileInfo.put("nickName", nickName);
+//        this.profileInfo.put("dayOfBirth", dayOfBirth);
+//    }
+
+    public PersonalInfo(HashMap profileInfo, HashMap contactInfo) {
+        this.profileInfo = profileInfo;
+        this.contactInfo = contactInfo;
     }
 
     public PersonalInfo getPersonalInfo() {return this;}
 
-    public String getProfileInfo(String key) {
+    public String getProfileInfoByName(String key) {
         return profileInfo.get(key);
     }
+
+    public HashMap getContactInfo() { return this.contactInfo; }
 }

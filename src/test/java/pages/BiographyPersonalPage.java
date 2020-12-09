@@ -2,13 +2,13 @@ package pages;
 
 import Config.ServerConfig;
 import TestData.PersonalInfo;
-import net.bytebuddy.asm.Advice;
 import org.aeonbits.owner.ConfigFactory;
-import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
+import java.util.HashMap;
+import java.util.List;
 
 public class BiographyPersonalPage extends AbstractPage {
 
@@ -36,20 +36,19 @@ public class BiographyPersonalPage extends AbstractPage {
     }
 
     // заполняем форму значениями
-    public BiographyPersonalPage addPersonalData(String name) {
-        PersonalInfo info = new PersonalInfo(name);
+    public BiographyPersonalPage addPersonalData(PersonalInfo profile) {
         driver.findElement(fName).clear();
-        driver.findElement(fName).sendKeys(info.getProfileInfo("firstName"));
+        driver.findElement(fName).sendKeys(profile.getProfileInfoByName("firstName"));
         driver.findElement(fNameLat).clear();
-        driver.findElement(fNameLat).sendKeys(info.getProfileInfo("firstNameLatin"));
+        driver.findElement(fNameLat).sendKeys(profile.getProfileInfoByName("firstNameLatin"));
         driver.findElement(lName).clear();
-        driver.findElement(lName).sendKeys(info.getProfileInfo("lastName"));
+        driver.findElement(lName).sendKeys(profile.getProfileInfoByName("lastName"));
         driver.findElement(lNameLat).clear();
-        driver.findElement(lNameLat).sendKeys(info.getProfileInfo("lastnameLatin"));
+        driver.findElement(lNameLat).sendKeys(profile.getProfileInfoByName("lastnameLatin"));
         driver.findElement(bName).clear();
-        driver.findElement(bName).sendKeys(info.getProfileInfo("nickName"));
+        driver.findElement(bName).sendKeys(profile.getProfileInfoByName("nickName"));
         driver.findElement(dob).clear();
-        driver.findElement(dob).sendKeys(info.getProfileInfo("dayOfBirth"));
+        driver.findElement(dob).sendKeys(profile.getProfileInfoByName("dayOfBirth"));
         return this;
     }
 
@@ -70,20 +69,31 @@ public class BiographyPersonalPage extends AbstractPage {
     }
 
     // сохраняем ввыеденные данные
-    public BiographyPage saveData() {
+    public BiographyCvPage saveData() {
         driver.findElement(saveAnfFillLater).click();
-        return new BiographyPage(driver);
+        return new BiographyCvPage(driver);
     }
 
     // считываем занчение полей на форме
-    public PersonalInfo getPersonalData() {
-        return new PersonalInfo(
-                driver.findElement(fName).getAttribute("value"),
-                driver.findElement(lName).getAttribute("value"),
-                driver.findElement(fNameLat).getAttribute("value"),
-                driver.findElement(lNameLat).getAttribute("value"),
-                driver.findElement(bName).getAttribute("value"),
-                driver.findElement(dob).getAttribute("value")
-        );
+    public HashMap getProfileData() {
+        HashMap info = new HashMap<String, String>();
+        info.put("firstName", driver.findElement(fName).getAttribute("value"));
+        info.put("lastName", driver.findElement(lName).getAttribute("value"));
+        info.put("firstNameLatin", driver.findElement(fNameLat).getAttribute("value"));
+        info.put("lastnameLatin", driver.findElement(lNameLat).getAttribute("value"));
+        info.put("nickName", driver.findElement(bName).getAttribute("value"));
+        info.put("dayOfBirth", driver.findElement(dob).getAttribute("value"));
+        return info;
+    }
+
+    public HashMap getContactData() {
+        HashMap info = new HashMap<String, String>();
+        List<WebElement> list = driver.findElements(By.cssSelector("div[data-prefix=\"contact\"] > div > div"));
+        list.forEach(e -> {
+            info.put(
+                    e.findElement(By.cssSelector("label > input")).getAttribute("value"),
+                    e.findElement(enterContactNumber).getAttribute("value"));
+        });
+        return info;
     }
 }
