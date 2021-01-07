@@ -39,11 +39,8 @@ public class HomeWork04Test {
 
     @BeforeAll
     public static void setUp() {
-        ServerConfig cfg = ConfigFactory.create(ServerConfig.class);
-        String browser = cfg.browser();
         driver = new WebDriverFactory().createWebDriver(browser);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-//        wait = new WebDriverWait(driver, 10, 125);
         logger.info("Драйвер запущен");
     }
 
@@ -99,39 +96,39 @@ public class HomeWork04Test {
         PersonalInfo info = new PersonalInfo(pers, cont);
         PersonalInfo infoToCompare = new PersonalInfo(profileName);
         // проверяем, что данные ФИО, ДР на форме соответствуют введённым
-        Assertions.assertEquals(
-                info.getProfileInfoByName("firstName"),
-                infoToCompare.getProfileInfoByName("firstName"),
-                "Фамилия не совпадает");
-        Assertions.assertEquals(
-                info.getProfileInfoByName("lastName"),
-                infoToCompare.getProfileInfoByName("lastName"),
-                "Имя не совпадает");
-        Assertions.assertEquals(
-                info.getProfileInfoByName("firstNameLatin"),
-                infoToCompare.getProfileInfoByName("firstNameLatin"),
-                "Фамилия (латиницей) не совпадает");
-        Assertions.assertEquals(
-                info.getProfileInfoByName("lastnameLatin"),
-                infoToCompare.getProfileInfoByName("lastnameLatin"),
-                "Имя (латиницей) не совпадает");
-        Assertions.assertEquals(
-                info.getProfileInfoByName("nickName"),
-                infoToCompare.getProfileInfoByName("nickName"),
-                "Никнейм не совпадает");
-        Assertions.assertEquals(
-                info.getProfileInfoByName("dayOfBirth"),
-                infoToCompare.getProfileInfoByName("dayOfBirth"),
-                "Дата рождения не совпадает");
+        Assertions.assertAll(
+                () -> Assertions.assertEquals(
+                        info.getProfileInfoByName("firstName"),
+                        infoToCompare.getProfileInfoByName("firstName"),
+                        "Фамилия не совпадает"),
+                () -> Assertions.assertEquals(
+                        info.getProfileInfoByName("lastName"),
+                        infoToCompare.getProfileInfoByName("lastName"),
+                        "Имя не совпадает"),
+                () -> Assertions.assertEquals(
+                        info.getProfileInfoByName("firstNameLatin"),
+                        infoToCompare.getProfileInfoByName("firstNameLatin"),
+                        "Фамилия (латиницей) не совпадает"),
+                () -> Assertions.assertEquals(
+                        info.getProfileInfoByName("lastnameLatin"),
+                        infoToCompare.getProfileInfoByName("lastnameLatin"),
+                        "Имя (латиницей) не совпадает"),
+                () -> Assertions.assertEquals(
+                        info.getProfileInfoByName("nickName"),
+                        infoToCompare.getProfileInfoByName("nickName"),
+                        "Никнейм не совпадает"),
+                () -> Assertions.assertEquals(
+                        info.getProfileInfoByName("dayOfBirth"),
+                        infoToCompare.getProfileInfoByName("dayOfBirth"),
+                        "Дата рождения не совпадает")
+        );
         // проверяем, что данные контактов на форме соответствуют введённым
         infoToCompare.getContactInfo().forEach((k, v) -> {
             String e = (String) info.getContactInfo().get(k.toString().toLowerCase());
-            Assertions.assertTrue(info.getContactInfo().containsKey(k.toString().toLowerCase()),"Нет такого контакта");
-            Assertions.assertEquals(v,e,"Номер контакта неверный");
+            Assertions.assertAll(
+                    () -> Assertions.assertTrue(info.getContactInfo().containsKey(k.toString().toLowerCase()),"Нет такого контакта"),
+                    () -> Assertions.assertEquals(v,e,"Номер контакта неверный")
+            );
         });
-    }
-
-    private WebElement waitElement(By by) {
-        return wait.until(ExpectedConditions.visibilityOf(driver.findElement(by)));
     }
 }

@@ -57,7 +57,7 @@ public class BiographyPersonalPage extends AbstractPage {
         contactButton.click();
         WebElement block = driver.findElement(contactItem);
         block.findElement(selectContactType).click();
-        block.findElement(By.cssSelector("button[data-value=\"" + type.toLowerCase() + "\"]")).click();
+        block.findElement(By.cssSelector(String.format("button[data-value=\"%s\"]", type.toLowerCase()))).click();
         block.findElement(enterContactNumber).sendKeys(value);
         return this;
     }
