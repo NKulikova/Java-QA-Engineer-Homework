@@ -32,11 +32,12 @@ public class HomeWork03Test {
 
     //локаторы
     private String filter = "fieldset[data-autotest-id=\"7893318\"]";
-    private String checkboxSamsung = "li:nth-child(9) > div > a > label > div";
+    private String checkboxSamsung = "li:nth-child(8) > div > a > label > div";
     private String checkboxXiaomi = "li:nth-child(11) > div > a > label > div";
     private String priceSort = "button[data-autotest-id=\"dprice\"]";
     private String searchResults = "div[data-zone-name=\"SearchResults\"]";
     private String articles = "article";
+    private String addToCompare = "div:nth-child(2) > div:nth-child(2)";
 
     @BeforeAll
     public static void setUp() {
@@ -90,9 +91,9 @@ public class HomeWork03Test {
             // org.openqa.selenium.StaleElementReferenceException: The element reference of <article class="_1_IxNTwqll cia-vs cia-cs"> is stale;
             // either the element is no longer attached to the DOM, it is not in the current frame context, or the document has been refreshed
             // Но страница не обновлялась, элементы не менялись.
-            samsungItem.findElement(By.cssSelector("div[aria-label=\"Добавить к сравнению\"]"));
+            samsungItem.findElement(By.cssSelector(addToCompare));
             logger.info("Дбавляем к сравнению Samsung");
-            xiaomiItem.findElement(By.cssSelector("div[aria-label=\"Добавить к сравнению\"]"));
+            xiaomiItem.findElement(By.cssSelector(addToCompare));
             logger.info("Дбавляем к сравнению Xiaomi");
             WebElement compare = wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.linkText("Сравнить"))));
             compare.click();
