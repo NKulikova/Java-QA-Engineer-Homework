@@ -1,36 +1,36 @@
-/*
-    основные аннатации @Execution(concurrent) - параллельно запускаются
-        resourceLock - не запускать последовательные, пока не пройдут параллельные
-        запуск хаба >java -jar selenium-server-standalone-3.141.59.jar -role hub
-        запуск ноды >java -jar selenium-server-standalone-3.141.59.jar -role node -hub http://192.168.1.173:4444/grid/register/ -port 4448
-*/
-
 package cases;
 
+import Config.ServerConfig;
+import Helpers.WebDriverFactory;
+import io.qameta.allure.*;
+import org.aeonbits.owner.ConfigFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
-import org.openqa.selenium.ie.InternetExplorerOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.concurrent.TimeUnit;
+import java.io.ByteArrayInputStream;
+import java.util.List;
 
-public class HomeWork07Test {
+@Epic("Тестирование Otus")
+public class HomeWork08Test {
 
-    protected static RemoteWebDriver driver;
-    private static Logger logger = LogManager.getLogger(HomeWork07Test.class);
+    private static final ServerConfig cfg = ConfigFactory.create(ServerConfig.class);
+
+    static String browserName = cfg.browser();
+    protected static WebDriver driver;
+    protected static WebDriverWait wait;
+    private static final Logger logger = LogManager.getLogger(HomeWork08Test.class);
+    private static final String URL = cfg.url();
 
     @BeforeAll
-    public static void setUp() throws MalformedURLException {
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("platform", "WINDOWS");
-        capabilities.setCapability("browser", "internet explorer");
-        driver = new RemoteWebDriver(new URL("http://192.168.88.232:4444/wd/hub"), new InternetExplorerOptions());
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    public static void setUp() {
+        driver = new WebDriverFactory().createWebDriver(browserName);
+        wait = new WebDriverWait(driver, 10, 125);
         logger.info("Драйвер запущен");
     }
 
@@ -43,9 +43,54 @@ public class HomeWork07Test {
     }
 
     @Test
-    public void open() {
-        driver.get("https://otus.ru/");
+    @Story(value = "Откытие формы авторизации")
+    @Description(value = "Откытие формы авторизации")
+    void openLoginPage() {
+        openMainPage();
+        loginButton();
+        Allure.addAttachment("LoginPageForm", new ByteArrayInputStream(((TakesScreenshot) driver)
+                .getScreenshotAs(OutputType.BYTES)));
+    }
+
+    @Test
+    @Story(value = "Открытие курса {course}")
+    void openJavaDevCourse() {
+        openMainPage();
+        openCourse("Java Developer. Professional");
+        Allure.addAttachment("JavaDevCoursePage", new ByteArrayInputStream(((TakesScreenshot) driver)
+                .getScreenshotAs(OutputType.BYTES)));
+    }
+
+    @Test
+    @Story(value = "Открытие курса {course}")
+    void openOneCDevCourse() {
+        openMainPage();
+        openCourse("Программист 1С");
+        Allure.addAttachment("OneCDevCoursePage", new ByteArrayInputStream(((TakesScreenshot) driver)
+                .getScreenshotAs(OutputType.BYTES)));
+    }
+
+    @Step(value = "Открытие главной страницы")
+    void openMainPage() {
+        driver.get(URL);
+        driver.manage().window().maximize();
+        logger.info("Открыта страница Otus");
+    }
+
+    @Step(value = "Нажатие кнопки \"Вход и регистрация\"")
+    void loginButton() {
         driver.findElement(By.cssSelector("button.header2__auth")).click();
+        Assertions.assertTrue(driver.findElement(By.cssSelector("div.new-log-reg-container")).isDisplayed());
+        logger.info("Открыта форма ввода логина и пароля");
+    }
+
+    @Step(value = "Открытие курса {course}")
+    void openCourse(String course) {
+        driver.findElement(By.cssSelector("a[title=\"Больше курсов\"]")).click();
+        logger.info("Открыт список всех курсов");
+        driver.findElement(By.partialLinkText(course)).click();
+        Assertions.assertEquals(course, driver.findElement(By.cssSelector(".course-header2__title")).getText());
+        logger.info("Курс \"{}\" открыт", course);
     }
 
 }
