@@ -5,5 +5,5 @@
 *.log
 /.allure
 /target
-target
-.allure
+target/
+.allure/
