@@ -43,8 +43,8 @@ public class HomeWork08Test {
     }
 
     @Test
-    @Story(value = "Откытие формы авторизации")
-    @Description(value = "Откытие формы авторизации")
+    @Story(value = "Открытие формы авторизации")
+    @Description(value = "Открытие формы авторизации")
     void openLoginPage() {
         openMainPage();
         loginButton();
@@ -53,7 +53,7 @@ public class HomeWork08Test {
     }
 
     @Test
-    @Story(value = "Открытие курса {course}")
+    @Story(value = "Открытие списка курсов")
     void openJavaDevCourse() {
         openMainPage();
         openCourse("Java Developer. Professional");
@@ -62,7 +62,7 @@ public class HomeWork08Test {
     }
 
     @Test
-    @Story(value = "Открытие курса {course}")
+    @Story(value = "Открытие списка курсов")
     void openOneCDevCourse() {
         openMainPage();
         openCourse("Программист 1С");
@@ -84,7 +84,7 @@ public class HomeWork08Test {
         logger.info("Открыта форма ввода логина и пароля");
     }
 
-    @Step(value = "Открытие курса {course}")
+    @Feature(value = "Открытие списка курсов")
     void openCourse(String course) {
         driver.findElement(By.cssSelector("a[title=\"Больше курсов\"]")).click();
         logger.info("Открыт список всех курсов");
