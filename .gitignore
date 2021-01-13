@@ -1,5 +1,6 @@
 .idea
 !*.xml
-*/target
+*/target/
 *.iml
 *.log
+*/.allure/
