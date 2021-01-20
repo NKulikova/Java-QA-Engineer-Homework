@@ -6,6 +6,6 @@ import org.springframework.context.annotation.PropertySource;
 
 @Configuration
 @ComponentScan(basePackages = "otus")
-@PropertySource("application.properties")
-public class Config {
+@PropertySource(value = "classpath:properties/application.properties")
+public class PropertiesConfig {
 }

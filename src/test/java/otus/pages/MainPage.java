@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-public class MainPage extends AbstractPage {
+public class MainPage {
 
     @FindBy(partialLinkText = "Больше курсов")
     public WebElement btnAllCourses;
@@ -19,8 +19,6 @@ public class MainPage extends AbstractPage {
     @Autowired
     @Qualifier(value = "firefox")
     private WebDriver driver;
-
-    public MainPage(WebDriver driver) { super(driver); }
 
     public void open(String url) {
         driver.get(url);

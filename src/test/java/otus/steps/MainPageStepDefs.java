@@ -1,15 +1,13 @@
 package otus.steps;
 
 import io.cucumber.java.en.*;
-import io.cucumber.spring.CucumberContextConfiguration;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Assertions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ContextConfiguration;
-import otus.config.Config;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import otus.pages.MainPage;
 
 public class MainPageStepDefs {
@@ -25,7 +23,7 @@ public class MainPageStepDefs {
     @When("Open MainPage")
     public void openMainPage() {
         mainPage.open(url);
-        logger.info("open page" + url);
+        logger.info("open page " + url);
     }
 
     @Then("Check open MainPage")
