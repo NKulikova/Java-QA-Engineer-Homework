@@ -1,3 +1,5 @@
+package classwork.tests;
+
 import Config.ServerConfig;
 import org.aeonbits.owner.ConfigFactory;
 import org.apache.logging.log4j.LogManager;

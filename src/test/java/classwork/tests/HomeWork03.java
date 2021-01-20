@@ -1,3 +1,5 @@
+package classwork.tests;
+
 import Config.ServerConfig;
 import Helpers.WebDriverFactory;
 import org.aeonbits.owner.ConfigFactory;
@@ -10,13 +12,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 
 public class HomeWork03 {
 

@@ -1,4 +1,4 @@
-package pages;
+package classwork.pages;
 
 import Config.ServerConfig;
 import org.aeonbits.owner.ConfigFactory;

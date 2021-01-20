@@ -1,9 +1,7 @@
-package pages;
+package classwork.pages;
 
 import Config.ServerConfig;
-import TestData.PersonalInfo;
 import org.aeonbits.owner.ConfigFactory;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class BiographySkillsPage extends AbstractPage {

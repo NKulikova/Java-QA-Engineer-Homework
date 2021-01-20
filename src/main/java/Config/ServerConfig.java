@@ -3,7 +3,7 @@ package Config;
 import org.aeonbits.owner.Config;
 import org.aeonbits.owner.Config.*;
 
-@Sources("classpath:config.properties")
+@Sources("classpath:classwork.config.properties")
 public interface ServerConfig extends Config {
 
     @Key("browser")
