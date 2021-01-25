@@ -10,6 +10,5 @@ import org.junit.runner.RunWith;
         glue = {"otus.steps"},
         tags = "@test"
 )
-
 public class RunTest {
 }

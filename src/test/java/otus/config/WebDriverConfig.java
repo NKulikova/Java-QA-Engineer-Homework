@@ -7,14 +7,11 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
 import org.springframework.stereotype.Service;
-import org.springframework.test.annotation.DirtiesContext;
 
 import java.util.concurrent.TimeUnit;
 
-@Configuration
+@Service
 @ComponentScan("otus")
 public class WebDriverConfig {
 
@@ -36,7 +33,7 @@ public class WebDriverConfig {
         if (driver == null) {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
             driver.manage().window().maximize();
             return driver;
         }

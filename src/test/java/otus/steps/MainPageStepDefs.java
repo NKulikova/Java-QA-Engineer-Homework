@@ -6,8 +6,7 @@ import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Assertions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
+import otus.config.WebDriverConfig;
 import otus.pages.MainPage;
 
 public class MainPageStepDefs {
@@ -19,15 +18,38 @@ public class MainPageStepDefs {
 
     @Value("${url}")
     private String url;
+    @Value("${urlProgramming}")
+    private String urlProgramming;
 
-    @When("Open MainPage")
+    @Given("Open Main page")
     public void openMainPage() {
         mainPage.open(url);
         logger.info("open page " + url);
     }
 
-    @Then("Check open MainPage")
+    @When("Close Cookies Popup")
+    public void closeCookiesPopup() {
+        mainPage.closeCookiesPopup();
+    }
+
+    @When("Close Banner")
+    public void closeBanner() {
+        mainPage.closeBanner();
+    }
+
+    @When("Click More courses")
+    public void openMoreCourses() {
+        mainPage.openMoreCourses();
+        logger.info("open Courses list");
+    }
+
+    @Then("Check open page with courses")
     public void chekPage() {
-        Assertions.assertTrue(true);
+        Assertions.assertEquals(urlProgramming, WebDriverConfig.firefoxDriver().getCurrentUrl());
+    }
+
+    @When("Open Login form")
+    public void openLoginForm() {
+        mainPage.openLoginForm();
     }
 }
