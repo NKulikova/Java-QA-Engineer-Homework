@@ -49,10 +49,10 @@ public class GridTest {
         DesiredCapabilities capabilities = new DesiredCapabilities();
 //        capabilities.setCapability("build", "your build name");
 //        capabilities.setCapability("name", "your test name");
-        capabilities.setCapability("platform", "Windows 10");
-        capabilities.setCapability("browserName", "Chrome");
-        capabilities.setCapability("version","86.0");
-        driver = new RemoteWebDriver(new URL("http://192.168.88.232:4444/wd/hub"), new FirefoxOptions());
+//        capabilities.setCapability("platform", "Windows 10");
+//        capabilities.setCapability("browserName", "Chrome");
+//        capabilities.setCapability("version","86.0");
+        driver = new RemoteWebDriver(new URL("http://192.168.88.232:5555/wd/hub"), new FirefoxOptions());
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         logger.info("Драйвер запущен");
     }
