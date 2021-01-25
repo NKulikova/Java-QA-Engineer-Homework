@@ -8,6 +8,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -38,12 +39,12 @@ public class SelenoidTest {
     public static void setUp() throws MalformedURLException {
         ServerConfig cfg = ConfigFactory.create(ServerConfig.class);
         DesiredCapabilities capabilities = new DesiredCapabilities();
-//        capabilities.setCapability("build", "your build name");
-//        capabilities.setCapability("name", "your test name");
+        capabilities.setCapability("build", "your build name");
+        capabilities.setCapability("name", "your test name");
         capabilities.setCapability("platform", "Windows 10");
         capabilities.setCapability("browserName", "Chrome");
-        capabilities.setCapability("version","86.0");
-        driver = new RemoteWebDriver(new URL("http://192.168.88.232:4444/wd/hub"), new FirefoxOptions());
+        capabilities.setCapability("version","88.0");
+        driver = new RemoteWebDriver(new URL("http://192.168.88.232:4444/wd/hub"), capabilities);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         logger.info("Драйвер запущен");
     }
