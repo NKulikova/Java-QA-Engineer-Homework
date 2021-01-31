@@ -4,57 +4,49 @@ import Config.ServerConfig;
 import org.aeonbits.owner.ConfigFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.ie.InternetExplorerOptions;
+import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.parallel.Execution;
+import org.junit.jupiter.api.parallel.ExecutionMode;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.MainPageNotAuth;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
+@Execution(ExecutionMode.CONCURRENT)
 public class SelenoidTest {
 
     private static ServerConfig cfg = ConfigFactory.create(ServerConfig.class);
-    static String browser = cfg.browser();
-    protected static RemoteWebDriver driver;
-    protected static WebDriverWait wait;
     private static Logger logger = LogManager.getLogger(SelenoidTest.class);
+    private static final String LOGIN = cfg.login();
+    private static final String PASSWORD = cfg.password();
+    protected WebDriver driver;
 
-    // тут указываем какми данными будем заполнять поля на форме профиля
-    // все данные заданы в файле TestData.PersonalInfo в виде хешкарты
-    private String profileName = "Afanaseva";
-//    private String profileName = "Kulikova";
+    @BeforeEach
+    public void initDriver() throws MalformedURLException {
+        String port = System.getProperty("port");
+        String slenoidURL = "http://192.168.88.232:" + port + "/wd/hub/";
+        DesiredCapabilities caps = new DesiredCapabilities();
+        caps.setBrowserName(System.getProperty("browser_name", "chrome"));
+        caps.setVersion(System.getProperty("browser_version", "88.0"));
+        caps.setCapability("enableVNC", true);
+        caps.setCapability("screenResolution", "1280x1024");
+        caps.setCapability("enableVideo", true);
+        caps.setCapability("enableLog", true);
 
+        driver = new RemoteWebDriver(new URL(slenoidURL), caps);
 
-    String login = cfg.login();
-    String password = cfg.password();
-
-    @BeforeAll
-    public static void setUp() throws MalformedURLException {
-        ServerConfig cfg = ConfigFactory.create(ServerConfig.class);
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("build", "your build name");
-        capabilities.setCapability("name", "your test name");
-        capabilities.setCapability("platform", "Windows 10");
-        capabilities.setCapability("browserName", "Chrome");
-        capabilities.setCapability("version","88.0");
-        driver = new RemoteWebDriver(new URL("http://192.168.88.232:4444/wd/hub"), capabilities);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        logger.info("Драйвер запущен");
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 
-    @AfterAll
-    public static void setDown() {
+    @AfterEach
+    public void quitDriver() {
         if (driver != null) {
             driver.quit();
         }
-        logger.info("Драйвер остановлен");
     }
 
     @Test
@@ -63,14 +55,14 @@ public class SelenoidTest {
         mainPage
                 .open()
                 .openLoginPage()
-                .enterLoginAndPassword(login, password)
+                .enterLoginAndPassword(LOGIN, PASSWORD)
                 .openBiographyPersonalPage();
     }
 
+    @Test
+    public void openMainPage() {
+        MainPageNotAuth mainPage = new MainPageNotAuth(driver);
+        mainPage.open();
+    }
+
 }
-
-/*https://github.com/aerokube/cm/releases/tag/1.7.2
-        $ ./cm selenoid start --vnc
-        $ ./cm selenoid-ui start
-
-*/

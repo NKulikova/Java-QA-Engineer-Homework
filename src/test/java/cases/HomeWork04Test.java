@@ -51,7 +51,6 @@ public class HomeWork04Test {
         logger.info("Драйвер остановлен");
     }
 
-    @Test
     public void FillAndSavePersonalData() throws NoSuchElementException {
         PersonalInfo profile = new PersonalInfo(profileName);
         MainPageNotAuth mainPage = new MainPageNotAuth(driver);
@@ -64,7 +63,6 @@ public class HomeWork04Test {
                 .saveData();
     }
 
-    @Test
     public void FillAndSaveContactData() throws NoSuchElementException {
         PersonalInfo profile = new PersonalInfo(profileName);
         MainPageNotAuth mainPage = new MainPageNotAuth(driver);
