@@ -18,9 +18,6 @@ public class MainPage {
     @Qualifier(value = "firefox")
     private WebDriver driver;
 
-//    @Autowired
-//    LoginPage loginPage;
-
     @FindBy(partialLinkText = "Больше курсов")
     WebElement btnMoreCourses;
     @FindBy(css = "button[data-modal-id=\"new-log-reg\"]")
@@ -49,6 +46,5 @@ public class MainPage {
 
     public void openLoginForm() {
         btnLoginAndRegistration.click();
-//        return loginPage;
     }
 }
