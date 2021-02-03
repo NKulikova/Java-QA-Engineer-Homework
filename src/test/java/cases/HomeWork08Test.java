@@ -11,10 +11,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.ByteArrayInputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @Epic("Тестирование Otus")
 public class HomeWork08Test {
@@ -32,6 +37,18 @@ public class HomeWork08Test {
         driver = new WebDriverFactory().createWebDriver(browserName);
         wait = new WebDriverWait(driver, 10, 125);
         logger.info("Драйвер запущен");
+//        String slenoidURL = "http://192.168.88.232:4444/wd/hub/";
+//        DesiredCapabilities caps = new DesiredCapabilities();
+//        caps.setBrowserName(System.getProperty("browser_name", "chrome"));
+//        caps.setVersion(System.getProperty("browser_version", "88.0"));
+//        caps.setCapability("enableVNC", true);
+//        caps.setCapability("screenResolution", "1280x1024");
+//        caps.setCapability("enableVideo", true);
+//        caps.setCapability("enableLog", true);
+
+//        driver = new RemoteWebDriver(new URL(slenoidURL), caps);
+
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 
     @AfterAll
@@ -63,9 +80,9 @@ public class HomeWork08Test {
 
     @Test
     @Story(value = "Открытие списка курсов")
-    void openOneCDevCourse() {
+    void openCSharpCourse() {
         openMainPage();
-        openCourse("Программист 1С");
+        openCourse("Разработчик C#");
         Allure.addAttachment("OneCDevCoursePage", new ByteArrayInputStream(((TakesScreenshot) driver)
                 .getScreenshotAs(OutputType.BYTES)));
     }
