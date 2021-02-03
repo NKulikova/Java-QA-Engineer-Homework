@@ -1,0 +1,252 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-build plugin="workflow-job@2.40">
+  <actions>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UserIdCause>
+            <userId>admin</userId>
+          </hudson.model.Cause_-UserIdCause>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <org.jenkinsci.plugins.workflow.libs.LibrariesAction plugin="workflow-cps-global-lib@2.17">
+      <libraries/>
+    </org.jenkinsci.plugins.workflow.libs.LibrariesAction>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.ExecutionModelAction plugin="pipeline-model-definition@1.8.0">
+      <stagesUUID>0b25b5f6-1b17-4c0d-8b6f-43422028ad9a</stagesUUID>
+      <pipelineDefs>
+        <org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTPipelineDef plugin="pipeline-model-api@1.8.0">
+          <stages>
+            <stages>
+              <org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTStage>
+                <name>Build</name>
+                <branches>
+                  <org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTBranch>
+                    <name>default</name>
+                    <steps>
+                      <org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTStep>
+                        <name>git</name>
+                        <args class="org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTNamedArgumentList">
+                          <arguments class="linked-hash-map">
+                            <entry>
+                              <org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTKey>
+                                <key>url</key>
+                              </org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTKey>
+                              <org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTValue_-ConstantValue>
+                                <value class="string">https://github.com/NKulikova/Java-QA-Engineer-Homework.git</value>
+                              </org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTValue_-ConstantValue>
+                            </entry>
+                            <entry>
+                              <org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTKey>
+                                <key>branch</key>
+                              </org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTKey>
+                              <org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTValue_-ConstantValue>
+                                <value class="string">HW09</value>
+                              </org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTValue_-ConstantValue>
+                            </entry>
+                          </arguments>
+                        </args>
+                      </org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTStep>
+                      <org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTStep>
+                        <name>sh</name>
+                        <args class="org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTNamedArgumentList">
+                          <arguments class="linked-hash-map">
+                            <entry>
+                              <org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTKey>
+                                <key>script</key>
+                              </org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTKey>
+                              <org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTValue_-ConstantValue>
+                                <value class="string">mvn -Dmaven.test.failure.ignore=true clean test</value>
+                              </org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTValue_-ConstantValue>
+                            </entry>
+                          </arguments>
+                        </args>
+                      </org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTStep>
+                    </steps>
+                  </org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTBranch>
+                </branches>
+              </org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTStage>
+            </stages>
+            <uuid>0b25b5f6-1b17-4c0d-8b6f-43422028ad9a</uuid>
+          </stages>
+          <agent>
+            <agentType>
+              <key>any</key>
+            </agentType>
+          </agent>
+          <tools>
+            <tools class="linked-hash-map">
+              <entry>
+                <org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTKey>
+                  <key>maven</key>
+                </org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTKey>
+                <org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTValue_-ConstantValue>
+                  <value class="string">maven-3.6.3</value>
+                </org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTValue_-ConstantValue>
+              </entry>
+            </tools>
+          </tools>
+        </org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTPipelineDef>
+      </pipelineDefs>
+    </org.jenkinsci.plugins.pipeline.modeldefinition.actions.ExecutionModelAction>
+    <hudson.plugins.git.util.BuildData plugin="git@4.5.2">
+      <buildsByBranchName>
+        <entry>
+          <string>refs/remotes/origin/HW09</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@3.6.0">
+              <sha1>7f01557f916fd95c9e7b7d21f2d28bdbbffd1cbe</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/remotes/origin/HW09</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision reference="../marked"/>
+            <hudsonBuildNumber>9</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+        <entry>
+          <string>refs/remotes/origin/HW08</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@3.6.0">
+              <sha1>599d52abc8e7b5f099457fa75cce1aaf9e44a46b</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/remotes/origin/HW08</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision plugin="git-client@3.6.0">
+              <sha1 reference="../../marked/sha1"/>
+              <branches class="list">
+                <hudson.plugins.git.Branch reference="../../../marked/branches/hudson.plugins.git.Branch"/>
+              </branches>
+            </revision>
+            <hudsonBuildNumber>8</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+      </buildsByBranchName>
+      <lastBuild reference="../buildsByBranchName/entry/hudson.plugins.git.util.Build"/>
+      <scmName></scmName>
+      <remoteUrls>
+        <string>https://github.com/NKulikova/Java-QA-Engineer-Homework.git</string>
+      </remoteUrls>
+    </hudson.plugins.git.util.BuildData>
+    <org.jenkinsci.plugins.workflow.steps.scm.MultiSCMRevisionState plugin="workflow-scm-step@2.11">
+      <revisionStates>
+        <entry>
+          <string>git https://github.com/NKulikova/Java-QA-Engineer-Homework.git</string>
+          <hudson.scm.SCMRevisionState_-None/>
+        </entry>
+      </revisionStates>
+    </org.jenkinsci.plugins.workflow.steps.scm.MultiSCMRevisionState>
+  </actions>
+  <queueId>12</queueId>
+  <timestamp>1612339427256</timestamp>
+  <startTime>1612339427269</startTime>
+  <result>SUCCESS</result>
+  <duration>13992</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <execution class="org.jenkinsci.plugins.workflow.cps.CpsFlowExecution">
+    <result>SUCCESS</result>
+    <script>pipeline {
+    agent any
+
+    tools {
+        // Install the Maven version configured as &quot;M3&quot; and add it to the path.
+        maven &quot;maven-3.6.3&quot;
+    }
+
+    stages {
+        stage(&apos;Build&apos;) {
+            steps {
+                // Get some code from a GitHub repository
+                git ([
+                    url: &apos;https://github.com/NKulikova/Java-QA-Engineer-Homework.git&apos;,
+                    branch: &apos;HW09&apos;
+                ])
+
+                // Run Maven on a Unix agent.
+                sh &quot;mvn -Dmaven.test.failure.ignore=true clean test&quot;
+
+                // To run Maven on a Windows agent, use
+                // bat &quot;mvn -Dmaven.test.failure.ignore=true clean package&quot;
+            }
+
+            // post {
+                // If Maven was able to run the tests, even if some of the test
+                // failed, record the test results and archive the jar file.
+                // success {
+                //     junit &apos;**/target/surefire-reports/TEST-*.xml&apos;
+                // }
+            // }
+        }
+    }
+}
+</script>
+    <loadedScripts class="map"/>
+    <durabilityHint>MAX_SURVIVABILITY</durabilityHint>
+    <timings class="map">
+      <entry>
+        <string>flowNode</string>
+        <long>594716500</long>
+      </entry>
+      <entry>
+        <string>classLoad</string>
+        <long>2105415200</long>
+      </entry>
+      <entry>
+        <string>run</string>
+        <long>3309315600</long>
+      </entry>
+      <entry>
+        <string>parse</string>
+        <long>57062500</long>
+      </entry>
+      <entry>
+        <string>saveProgram</string>
+        <long>882917000</long>
+      </entry>
+    </timings>
+    <sandbox>true</sandbox>
+    <iota>29</iota>
+    <head>1:29</head>
+    <done>true</done>
+    <resumeBlocked>false</resumeBlocked>
+  </execution>
+  <completed>true</completed>
+  <checkouts class="hudson.util.PersistedList">
+    <org.jenkinsci.plugins.workflow.job.WorkflowRun_-SCMCheckout>
+      <scm class="hudson.plugins.git.GitSCM" plugin="git@4.5.2">
+        <configVersion>2</configVersion>
+        <userRemoteConfigs>
+          <hudson.plugins.git.UserRemoteConfig>
+            <url>https://github.com/NKulikova/Java-QA-Engineer-Homework.git</url>
+          </hudson.plugins.git.UserRemoteConfig>
+        </userRemoteConfigs>
+        <branches class="singleton-list">
+          <hudson.plugins.git.BranchSpec>
+            <name>*/HW09</name>
+          </hudson.plugins.git.BranchSpec>
+        </branches>
+        <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+        <submoduleCfg class="empty-list"/>
+        <extensions>
+          <hudson.plugins.git.extensions.impl.LocalBranch>
+            <localBranch>HW09</localBranch>
+          </hudson.plugins.git.extensions.impl.LocalBranch>
+        </extensions>
+      </scm>
+      <node></node>
+      <workspace>/var/jenkins_home/workspace/Project</workspace>
+      <changelogFile>/var/jenkins_home/jobs/Project/builds/9/changelog365944485729258688.xml</changelogFile>
+      <pollingBaseline class="hudson.scm.SCMRevisionState$None" reference="../../../actions/org.jenkinsci.plugins.workflow.steps.scm.MultiSCMRevisionState/revisionStates/entry/hudson.scm.SCMRevisionState_-None"/>
+    </org.jenkinsci.plugins.workflow.job.WorkflowRun_-SCMCheckout>
+  </checkouts>
+</flow-build>

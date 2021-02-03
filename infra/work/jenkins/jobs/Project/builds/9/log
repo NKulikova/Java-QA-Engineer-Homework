@@ -1,0 +1,94 @@
+Started by user [8mha:////4OR+nEilWSrCzGHLSJyHW4atpY7anpypfOrKq2LiLAnMAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Running in Durability level: MAX_SURVIVABILITY
+[8mha:////4CczXefRlE0FKxoZuVRQpjdvzmePsFggLceJalReAUvsAAAAoh+LCAAAAAAAAP9tjTEOwjAQBM8BClpKHuFItIiK1krDC0x8GCfWnbEdkooX8TX+gCESFVvtrLSa5wtWKcKBo5UdUu8otU4GP9jS5Mixv3geZcdn2TIl9igbHBs2eJyx4YwwR1SwULBGaj0nRzbDRnX6rmuvydanHMu2V1A5c4MHCFXMWcf8hSnC9jqYxPTz/BXAFEIGsfuclm8zQVqFvQAAAA==[0m[Pipeline] Start of Pipeline
+[8mha:////4H+7LE5KH6rrxsOv+JWkW4KAIVXRDjAHBfj2s8XJUYHTAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycohUghExsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jduZBmjwAAAAA==[0m[Pipeline] node
+Running on [8mha:////4O4roPI6r6vul3OEzuXLhEs+8Ji3MGyqHXleUn5p47vkAAAAnh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZh/eT83ILSktQifY3cxGIgrakPAHib2iPIAAAA[0mJenkins in /var/jenkins_home/workspace/Project
+[8mha:////4Basl1Dy040esXuEaGF4PPh938JiS2fMsZHsdMvNm1lKAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0gA0xsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jfoP95RwAAAAA==[0m[Pipeline] {
+[8mha:////4F67elwoKby7qdA7XLOkkglZWmI5YPdjcMzp2Yj+3lWjAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0gQkxsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jc09154wAAAAA==[0m[Pipeline] stage
+[8mha:////4DajtLhBYFu5lmvti+FCeQVgQ6vcqWLOn77xPgx8RkO4AAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0ggUxsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jek7ggRwAAAAA==[0m[Pipeline] { (Declarative: Tool Install)
+[8mha:////4HrJUZetQCnBKYLhTbfuSfL8aVW9dHOtuaTjTPDcaMcDAAAAoh+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQTbaWGsbAmNJ0AWEZb8zwLrbuWJvJp3kLiJlZNMMm+a93rDOic4UbLcG+wdZu14DKOti0+U+lugiXu6ck2YKRguzSSpM+cFJRUDS1gDKwEbgzpQdmgLbIVXD9UGhba9lFS/o4DGdQM8gYlqLiqVL8wJdvexy4Q/z18BzLEA29ce4gfg7KmOvAAAAA==[0m[Pipeline] tool
+[8mha:////4L6/OLIHFQQ+HeF0rxWPYAbaqwmI5lcin63TsLwYdwWFAAAAoh+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQTbGRNjZUtoPAGyiLDkfxZYdytP5NW8g8RNrJxkknnTvNcb1jnBiZLl3mDvMGvHYxhtXXyi1N8CTdzTlWvCTMFwaSZJnTkvKKkYWMIaWAnYGNSBskNbYCu8eqg2KLTtpaT6HQU0rhvgCUxUc1GpfGFOsLuPXSb8ef4KYI4F2L72ED8v8DEJvAAAAA==[0m[Pipeline] envVarsForTool
+[8mha:////4BK56Tw7FMUHG+2h/wu0K1jpj+Gi4bDVzdh4ApVg+UqsAAAAoh+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQTbmRhjZUtoPAGyiLDkfxZYdytP5NW8g8RNrJxkknnTvNcb1jnBiZLl3mDvMGvHYxhtXXyi1N8CTdzTlWvCTMFwaSZJnTkvKKkYWMIaWAnYGNSBskNbYCu8eqg2KLTtpaT6HQU0rhvgCUxUc1GpfGFOsLuPXSb8ef4KYI6xADvU7j/zqggXvAAAAA==[0m[Pipeline] }
+[8mha:////4I7pi/bt6jvWoA0OYixFDa0ycODMcX5dM81dWzJ+dx5yAAAAox+LCAAAAAAAAP9tjTESgjAQRT84FraWHiJoYeVY2WZoPEGEGAOZXUwWofJEXs07yMiMlb/67zXv9cYyRRw5OtVYaj2lyqsu9G56auDYXgMPquGLqpgSB6tKO5Rc29OMJYvFvCzHQmNlqQqcPDnBWjfmYYpgyBVniZM7aOS+vuOJTE9lMVG+MEZsbn2dmH6dvwGMXSfId1tBtv8AExtCpb0AAAA=[0m[Pipeline] // stage
+[8mha:////4AJxoRSDTv40oppiJ7K2vfvoEeOWK7rA43PbbVh7cyIWAAAAph+LCAAAAAAAAP9tjTEOwjAQBC9BKWgpeYSjSHSIitZywwtMbIwT6y7YF5KKF/E1/oAhEhVb7ay0mucLqhThQNGJzmLvMbVeDGF0uYmJYn8JNImOzqIlTBSsUHZSZOxxQUVsYUlRwkrC2mIbKHl0DBvZ6buug0ZXnzjmbS+h9OYGDyhkNrOO/IU5wvY6mkT48/wVwDwwFDuGsmk+x+oNEzd2msEAAAA=[0m[Pipeline] withEnv
+[8mha:////4PEr71f05MwxhXTTcxkxs5rT2ju2zdValDt1zojOUug1AAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUZUVMrFEWThCaEJJG/7dJSjpxIq7GHWipxIQHy7ZkvdcbqhjgRMEwp7GzGFvLej+aObFMobt5yszRlbWEkbxmQmdBSp/XKihpWFWUsOGw1dh6ihZNgh138iFrL9HUlxTm7cihtGqAJxR8JicZ0rdMAfb3UUXCH+cvAKY+Qdk0ix2WZ/UBbwyqm8IAAAA=[0m[Pipeline] {
+[8mha:////4G+836haDr7NSGaP+SG368bJNN+3aJROKjkEo5coNPxQAAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUwIiYukZZOEFoQkgb/V9+UtqJE3E17kBLJSY8WLYl673eUESGE7ETjcXWY6y96ELvpiQG4vYaaBANXURNGClYoeygyNhqqYqShUVZDisJa4t1oOjRJdjIRj90GTS68px42o4Scm/u8IRMTuSkOX3LyLC99SYS/jh/ATB2CfLdfrbD/Cw+y7kUycIAAAA=[0m[Pipeline] stage
+[8mha:////4Ip5zkhOjbOcJ1NZsd2sWx0vvSsRq5WNjMRmUVXK3DkMAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUCDbE1DXKwglCE0La6P/yk9JOnIircQdaKjHhwbItWe/1hiIynIidaCy2HmPtRRd6NyUxELfXQINo6CJqwkjBCmUHRcZWS1WULCzKclhJWFusA0WPLsFGNvqhy6DRlefE03aUkHtzhydkciInzelbRobtrTeR8Mf5C4CxS5Dv9rMd5mfxAbNWnxXCAAAA[0m[Pipeline] { (Build)
+[8mha:////4CDrcuQpo80IVIg91xx6tTeKLWEb4w/0bd5dwwb13z7jAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiJKgQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGPIUG53n9qHN8W7Eii+AAAA[0m[Pipeline] tool
+[8mha:////4CvpcyzCnWJP/pT1t9Gn9Zx7PktCwx9ebJlLyWrF391ZAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiJESDqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDhnK7+9Q+vAEG6D8DvgAAAA==[0m[Pipeline] envVarsForTool
+[8mha:////4HWtBmbOIT6eZw5Lv4FdRKZBNLSx5Dd8zTV0DWzJbdJeAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUSEgMiKlrlIUThCaEtNH/5SelnTgRV+MOtFRiwoNlW7Le6w1FZDgRO9FYbD3G2osu9G5KYiBur4EG0dBF1ISRghXKDoqMrZaqKFlYlOWwkrC2WAeKHl2CjWz0Q5dBoyvPiaftKCH35g5PyORETprTt4wM21tvIuGP8xcAY5cg3+1nO8zP4gOeMTC6wgAAAA==[0m[Pipeline] withEnv
+[8mha:////4JAEA2hiMCuZcVvFr6RSNFvCev1z+qXqrDycjAcCTzcCAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUTCAhpq5RFk4QmhDSRv+Xn5R24kRcjTvQUokJD5ZtyXqvNxSR4UTsRGOx9RhrL7rQuymJgbi9BhpEQxdRE0YKVig7KDK2WqqiZGFRlsNKwtpiHSh6dAk2stEPXQaNrjwnnrajhNybOzwhkxM5aU7fMjJsb72JhD/OXwCMXYJ8t5/tMD+LD0rlhNLCAAAA[0m[Pipeline] {
+[8mha:////4OhrJThxr+4JN75pZdJYz1TCrpwl9gIwZuBatrzO4FVbAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiOhCiSmu54QUmNsaJdWdsh6TiRXyNPxCIRMUWq51t5vmCZYpw5GixNdQ5So3D4Hs7LRw4dhfPA7Z8xoYpsTcozSBZm3pGydnAnKKEhYCVocZzcmQzrEWr7qryimx1ynH6DgJKp2/wgEJM5qxi/sIYYXPtdWL6ef4KYAwZyu3uU/vwBr2eB0O+AAAA[0m[Pipeline] git
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/NKulikova/Java-QA-Engineer-Homework.git # timeout=10
+Fetching upstream changes from https://github.com/NKulikova/Java-QA-Engineer-Homework.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.11.0'
+ > git fetch --tags --progress -- https://github.com/NKulikova/Java-QA-Engineer-Homework.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/HW09^{commit} # timeout=10
+Checking out Revision 7f01557f916fd95c9e7b7d21f2d28bdbbffd1cbe (refs/remotes/origin/HW09)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 7f01557f916fd95c9e7b7d21f2d28bdbbffd1cbe # timeout=10
+ > git branch -a -v --no-abbrev # timeout=10
+ > git checkout -b HW09 7f01557f916fd95c9e7b7d21f2d28bdbbffd1cbe # timeout=10
+Commit message: "fix"
+First time build. Skipping changelog.
+[8mha:////4CWPWyjasph9ZgnzHer+oUgwmJjdfY0yg6bKIgEnCl0tAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOICVEgoFa3lhheYxBgn1l2wHZyKF/E1/oBFJCq2WO1sM683LIOHmr3BTlNvKTQWBzeavDCx76+OE3Z8wYYpsNModZLc6tOMkqOGOUUJCwErTY3jYMlEWItOPVTlFJnqHH3+jgJK297hCYXI5qh8/MLkYXMb28D08/wVwDREKHeHXPvt8AGtm4OQvgAAAA==[0m[Pipeline] sh
++ mvn -Dmaven.test.failure.ignore=true clean test
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.example:Java-QA-Engineer-Homework:jar:1.0-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ line 17, column 21
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] ---------------< org.example:Java-QA-Engineer-Homework >----------------
+[INFO] Building Java-QA-Engineer-Homework 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ Java-QA-Engineer-Homework ---
+[INFO] Deleting /var/jenkins_home/workspace/Project/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ Java-QA-Engineer-Homework ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ Java-QA-Engineer-Homework ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 2 source files to /var/jenkins_home/workspace/Project/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ Java-QA-Engineer-Homework ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /var/jenkins_home/workspace/Project/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ Java-QA-Engineer-Homework ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 2 source files to /var/jenkins_home/workspace/Project/target/test-classes
+[WARNING] /var/jenkins_home/workspace/Project/src/test/java/TestData/PersonalInfo.java: /var/jenkins_home/workspace/Project/src/test/java/TestData/PersonalInfo.java uses unchecked or unsafe operations.
+[WARNING] /var/jenkins_home/workspace/Project/src/test/java/TestData/PersonalInfo.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ Java-QA-Engineer-Homework ---
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  6.439 s
+[INFO] Finished at: 2021-02-03T08:04:00Z
+[INFO] ------------------------------------------------------------------------
+[8mha:////4IHG55SAO9dbfCW9lcqGw1N4IRLsXOf35DH82nunTgIQAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOKiUCEhqrRWGl5gYmOcWHfGdkgqXsTX+AMWkajYYrWzzbzesI4BThwM9poGS7Gz6N1o8sKJw3B1PGHPF+yYIjuNrZ5aVrpZsOWkYUlRwkrARlPnOFoyCbailw9ZOUmmOqeQv6OA0qo7PKEQ2ZxkSF+YA+xuo4pMP89fAczeJyj3da768AGz5oXivgAAAA==[0m[Pipeline] }
+[8mha:////4DI6lepC9qwukXnnWhVSGeYOEBBo0WHtnnnC8G5RDvfWAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPMIRaSgQVVorDS8w8WGcWHfGdkgqXsTX+AMWkajYYrWzzbzesI4BThyM6JEGS7GzwrvR5CUmDsPV8SR6voiOKbJD0eLUssZmwZYTwpKihJWEDVLnOFoyCbayVw9VOUWmOqeQv6OE0uo7PKGQ2ZxUSF+YA+xuo45MP89fAczeJyjrOtf+8AGMia70vgAAAA==[0m[Pipeline] // withEnv
+[8mha:////4H+2dAmKKdWtsT0DSZFdrFBSRVSzEpagMZHvLrOrgbTXAAAApR+LCAAAAAAAAP9tjTsOwjAQRDdBFLSUHGIjPh1KRWu54QQmMcaJtRtsB6fiRFyNO2ARiYopRvOmea83LIOHmr3BTlNvKTQWBzeavDCx76+OE3Z8wYYpsNModZLc6tOMkqOGOUUJCwErTY3jYMlEWItOPVTlFJnqHH3+jgJK297hCYXI5qh8/MLkYXMb28D08/wVwDQMEcrdPtf28AGTC/umvgAAAA==[0m[Pipeline] }
+[8mha:////4DboEQjEQm269rYUokIhWqCz7Y4+yBVaXwio9KFgH0d5AAAApR+LCAAAAAAAAP9tjTsOwjAQRDdBFLSUHGIjPh1KRWu54QQmMcaJtRtsB6fiRFyNO2ARiYopRvOmea83LIOHmr3BTlNvKTQWBzeavDCx76+OE3Z8wYYpsNModZLc6tOMkqOGOUUJCwErTY3jYMlEWItOPVTlFJnqHH3+jgJK297hCYXI5qh8/MLkYXMb28D08/wVwDQMEcrdIdd2/wGIrpolvgAAAA==[0m[Pipeline] // stage
+[8mha:////4Ja6aE3vTuCPyx2NyJ28woBfbsWLBovNGyr3f8cuBJsgAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPMIRkagQVVorDS8w8WGcWHfGdkgqXsTX+AMWkajYYrWzzbzesI4BThyM6JEGS7GzwrvR5CUmDsPV8SR6voiOKbJD0eLUssZmwZYTwpKihJWEDVLnOFoyCbayVw9VOUWmOqeQv6OE0uo7PKGQ2ZxUSF+YA+xuo45MP89fAczeJyjrQ659/QG7TcGZvgAAAA==[0m[Pipeline] }
+[8mha:////4G6jaORZrkVowBf6ds074X9syaOovJgHTNVcbAIRNEVXAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOKiUNAgqrRWGl5gYmOcWHfGdkgqXsTX+AMWkajYYrWzzbzesI4BThwM9poGS7Gz6N1o8sKJw3B1PGHPF+yYIjuNrZ5aVrpZsOWkYUlRwkrARlPnOFoyCbailw9ZOUmmOqeQv6OA0qo7PKEQ2ZxkSF+YA+xuo4pMP89fAczeJyj3h1x1/QGvblyGvgAAAA==[0m[Pipeline] // withEnv
+[8mha:////4EexJAxZpGQpMp7+E+E219GSBQ4ABQxkUPi/hb/qpUbiAAAApB+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMKREBIFoqK10vACkxjjxLoL9oWk4kV8jT8QEYmKrXammdcbyxRx5OhUY6n1lCqvutC76amBY3sNPKiGL6piShysKu1Qcm1PM5YsFvOyHAuNlaUqcPLkBGvdmIcpgiFXnCVO7qCR+/qOJzI9lcVE+cIYsbn1dWL6df4GMHadIN/uBdnuAzuF8ea9AAAA[0m[Pipeline] }
+[8mha:////4AXRlNpFnffD0HRpjlBvbhdVYwa+tzIoCRVBKN5cxIB2AAAApB+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMKRoEFCVLRWGl5gEmOcWHfBvpBUvIiv8QciIlGx1c4083pjmSKOHJ1qLLWeUuVVF3o3PTVwbK+BB9XwRVVMiYNVpR1Kru1pxpLFYl6WY6GxslQFTp6cYK0b8zBFMOSKs8TJHTRyX9/xRKanspgoXxgjNre+Tky/zt8Axq4T5Nu9INt9AEmHxfq9AAAA[0m[Pipeline] // node
+[8mha:////4Lm+0Xz19/BUauaNy7b5/MXe5bSbZ1iJmp/Dkjracb4ZAAAAox+LCAAAAAAAAP9tjbEOgjAURS8YB1dHP6IkbMY4uTYsfkGFWgvNe9g+hMkv8tf8B4kkTt7pnrOc1xvrFHHk6FRrqfOUaq/6MLj5qZFjdw08qpYvqmZKHKyq7FhxY08LViwWy7IcK42NpTpw8uQEW92ahymCIVecJc7uoJH75o4nMj2XxUT5whSxuw1NYvp1/gYw9b0gL/eCrPwAb56isL0AAAA=[0m[Pipeline] End of Pipeline
+Finished: SUCCESS

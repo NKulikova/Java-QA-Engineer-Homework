@@ -33,20 +33,21 @@ public class HomeWork08Test {
     private static final String URL = cfg.url();
 
     @BeforeAll
-    public static void setUp() {
-        driver = new WebDriverFactory().createWebDriver(browserName);
-        wait = new WebDriverWait(driver, 10, 125);
-        logger.info("Драйвер запущен");
-//        String slenoidURL = "http://192.168.88.232:4444/wd/hub/";
-//        DesiredCapabilities caps = new DesiredCapabilities();
-//        caps.setBrowserName(System.getProperty("browser_name", "chrome"));
-//        caps.setVersion(System.getProperty("browser_version", "88.0"));
-//        caps.setCapability("enableVNC", true);
-//        caps.setCapability("screenResolution", "1280x1024");
-//        caps.setCapability("enableVideo", true);
-//        caps.setCapability("enableLog", true);
+    public static void setUp() throws MalformedURLException {
+//        driver = new WebDriverFactory().createWebDriver(browserName);
+//        wait = new WebDriverWait(driver, 10, 125);
+//        logger.info("Драйвер запущен");
+        String slenoidURL = "http://192.168.88.232:4444/wd/hub/";
+        DesiredCapabilities caps = new DesiredCapabilities();
+        caps.setBrowserName(System.getProperty("browser_name", "firefox"));
+        caps.setVersion(System.getProperty("browser_version", "84.0"));
+        caps.setCapability("enableVNC", true);
+        caps.setCapability("screenResolution", "1280x1024");
+        caps.setCapability("enableVideo", true);
+        caps.setCapability("enableLog", true);
 
-//        driver = new RemoteWebDriver(new URL(slenoidURL), caps);
+        driver = new RemoteWebDriver(new URL(slenoidURL), caps);
+        logger.info("Драйвер запущен");
 
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
