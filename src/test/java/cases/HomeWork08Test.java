@@ -32,7 +32,7 @@ public class HomeWork08Test {
     private static final Logger logger = LogManager.getLogger(HomeWork08Test.class);
     private static final String URL = cfg.url();
 
-    @BeforeEach
+    @BeforeAll
     public static void setUp() throws MalformedURLException {
 //        driver = new WebDriverFactory().createWebDriver(browserName);
 //        wait = new WebDriverWait(driver, 10, 125);
@@ -52,7 +52,7 @@ public class HomeWork08Test {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 
-    @AfterEach
+    @AfterAll
     public static void setDown() {
         if (driver != null) {
             driver.quit();
