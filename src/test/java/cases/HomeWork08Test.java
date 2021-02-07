@@ -37,6 +37,7 @@ public class HomeWork08Test {
 //        driver = new WebDriverFactory().createWebDriver(browserName);
 //        wait = new WebDriverWait(driver, 10, 125);
 //        logger.info("Драйвер запущен");
+//        jkhbjk
         String slenoidURL = "http://192.168.88.232:4444/wd/hub/";
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setBrowserName(System.getProperty("browser_name", "firefox"));
